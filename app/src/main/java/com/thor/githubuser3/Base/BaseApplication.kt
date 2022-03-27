@@ -2,6 +2,8 @@ package com.thor.githubuser3.Base
 
 import android.app.Application
 import com.thor.githubuser3.BuildConfig
+import com.thor.githubuser3.Data.Local.daoModule
+import com.thor.githubuser3.Data.Local.localModule
 import com.thor.githubuser3.Data.Remote.errorHandleModule
 import com.thor.githubuser3.Data.Remote.remoteModule
 import org.koin.android.ext.koin.androidContext
@@ -28,8 +30,9 @@ abstract class BaseApplication : Application() {
 
             modules(
                 mutableListOf(
+                    daoModule,
                     remoteModule,
-//                    localModule,
+                    localModule,
                     errorHandleModule
                 )
                     .apply { addAll(defineDependencies()) }

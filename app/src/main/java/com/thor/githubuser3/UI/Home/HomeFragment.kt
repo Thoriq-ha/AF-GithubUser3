@@ -1,7 +1,6 @@
 package com.thor.githubuser3.UI.Home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
@@ -10,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.navigation.fragment.findNavController
 import com.thor.githubuser3.Data.Preference.DataStore.DataStoreThemeUI
 import com.thor.githubuser3.Data.Preference.DataStore.UIMode
 import com.thor.githubuser3.R
@@ -31,7 +30,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val themeUI: DataStoreThemeUI by inject()
 
     private val adapter = UserAdapter {
-//        findNavController().navigate(HomeFragmentDirections.toProfileFragment(it))
+        findNavController().navigate(HomeFragmentDirections.toDetailUserFragment(it))
     }
 
     override fun onCreateView(
@@ -45,7 +44,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         binding.searchview.setOnQueryTextListener(onQueryTextListener)
 
@@ -81,9 +79,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 true
             }
             R.id.menu1 -> {
-                lifecycleScope.launch {
-                    themeUI.setThemeMode(UIMode.LIGHT)
-                }
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
+                )
                 true
             }
             R.id.menu2 -> {

@@ -1,8 +1,6 @@
 package com.thor.githubuser3.UI
 
 import android.annotation.SuppressLint
-import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +24,6 @@ class UserAdapter(private val itemClickListener: (User) -> Unit) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        Log.e("THOR", list.toString())
         return when (viewType) {
             1 -> ItemViewHolder(
                 ItemUserBinding.inflate(
@@ -81,5 +78,5 @@ class UserAdapter(private val itemClickListener: (User) -> Unit) :
         }
     }
 
-    class EmptyViewHolder(binding: ItemEmptyBinding): RecyclerView.ViewHolder(binding.root)
+    class EmptyViewHolder(binding: ItemEmptyBinding) : RecyclerView.ViewHolder(binding.root)
 }

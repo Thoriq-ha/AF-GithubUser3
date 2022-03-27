@@ -10,18 +10,37 @@
         android:name="com.thor.githubuser3.UI.Home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
-
         <action
-            android:id="@+id/action_homeFragment_to_DetailUserFragment"
-            app:destination="@id/DetailUserFragment" />
+            android:id="@+id/to_DetailUserFragment"
+            app:destination="@id/detailUserFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/DetailUserFragment"
+        android:id="@+id/detailUserFragment"
         android:name="com.thor.githubuser3.UI.DetailUser.DetailUserFragment"
         android:label="fragment_detail_user"
         tools:layout="@layout/fragment_detail_user">
+        <argument
+            android:name="user"
+            app:argType="com.thor.githubuser3.Repository.User.User" />
         <action
-            android:id="@+id/action_DetailUserFragment_self"
-            app:destination="@id/DetailUserFragment" />
+            android:id="@+id/action_detailUserFragment_self"
+            app:destination="@id/detailUserFragment">
+            <argument
+                android:name="user"
+                app:argType="com.thor.githubuser3.Repository.User.User" />
+        </action>
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.thor.githubuser3.UI.Favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailUserFragment"
+            app:destination="@id/detailUserFragment" />
+    </fragment>
+
 </navigation>

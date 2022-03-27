@@ -1,9 +1,10 @@
 package com.thor.githubuser3.Repository.User
 
+import com.thor.githubuser3.Data.Local.User.UserDao
 import com.thor.githubuser3.Data.Remote.Services.UserServices
 
 class UserRepository(
-//    private val dao: UserDao,
+    private val dao: UserDao,
     private val service: UserServices
 ) {
 
@@ -22,13 +23,13 @@ class UserRepository(
     /** https://api.github.com/users/username */
     fun detail(username: String) = service.user(username)
 
-//    fun favorite(user: User) = dao.save(user.toUserFavorite())
-//
-//    fun favorite(username: String) = dao.find(username)
-//
-//    fun favorites() = dao.findAll()
-//
-//    fun deleteFromFavorite(username: String) = dao.delete(username)
-//
-//    fun truncateFavorite() = dao.truncate()
+    fun favorite(user: User) = dao.save(user.toUserFavorite())
+
+    fun favorite(username: String) = dao.find(username)
+
+    fun favorites() = dao.findAll()
+
+    fun deleteFromFavorite(username: String) = dao.delete(username)
+
+    fun truncateFavorite() = dao.truncate()
 }
