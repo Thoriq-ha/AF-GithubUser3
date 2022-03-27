@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">GithubUser3</string>
+    <string name="hello_blank_fragment" tools:keep="@string/hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">search user</string>
+    <string name="menu">Exit</string>
+    <string name="hint">Masukkan nama pengguna</string>
+    <string name="tab_text1">Follower</string>
+    <string name="tab_text2">Following</string>
+    <string name="ahmad_dahlan" tools:keep="@string/ahmad_dahlan">ahmad_dahlan</string>
+    <string name="pegawai_negeri" tools:keep="@string/pegawai_negeri">pegawai_negeri</string>
+    <string name="github_user" tools:keep="@string/github_user">Github User</string>
+    <string name="icon_launcher" tools:keep="@string/icon_launcher">Icon Launcher</string>
+    <string name="name_robertinous_marianjo_l" tools:keep="@string/name_robertinous_marianjo_l">Name : Robertinous Marianjo L</string>
+    <string name="location_jl_gatot_kaca" tools:keep="@string/location_jl_gatot_kaca">Location : JL Gatot Kaca</string>
+    <string name="company_google_inc" tools:keep="@string/company_google_inc">Company : Google.inc</string>
+    <string name="followers" tools:keep="@string/followers">Followers</string>
+    <string name="_299k" tools:keep="@string/_299k">299k</string>
+    <string name="robert12" tools:keep="@string/robert12">\@robert12</string>
+    <string name="_147" tools:keep="@string/_147">147</string>
+    <string name="_5" tools:keep="@string/_5">5</string>
+    <string name="following" tools:keep="@string/following">Following</string>
+    <string name="repository" tools:keep="@string/repository">repository</string>
+    <string name="share" tools:keep="@string/share">Share</string>
+    <string name="user_not_found">User Not Found</string>
+    <string name="your_favourite">Your Favourite</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="network_fail">Network Fail</string>
+    <string name="data_is_empty">Data is Empty</string>
+
+</resources>
