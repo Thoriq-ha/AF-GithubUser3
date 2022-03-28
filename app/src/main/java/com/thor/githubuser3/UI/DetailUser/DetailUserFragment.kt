@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.google.android.material.tabs.TabLayoutMediator
 import com.thor.githubuser3.R
+import com.thor.githubuser3.UI.DetailUser.TabFollow.ProfileTabPagerAdapter
 import com.thor.githubuser3.Utils.viewBinding
 import com.thor.githubuser3.databinding.FragmentDetailUserBinding
 import org.koin.android.ext.android.inject
@@ -50,17 +52,8 @@ class DetailUserFragment : Fragment(R.layout.fragment_detail_user) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
 //        binding.toolbar.setNavigationOnClickListener {
 //            findNavController().navigateUp()
-//        }
-
-//        with(binding.tvRepository) {
-//            text = user.htmlUrl
-//            setOnClickListener {
-//                CustomTabsIntent.Builder().build()
-//                    .launchUrl(requireContext(), Uri.parse(user.htmlUrl))
-//            }
 //        }
 
         Glide.with(binding.root.context)
@@ -68,18 +61,18 @@ class DetailUserFragment : Fragment(R.layout.fragment_detail_user) {
             .fitCenter()
             .into(binding.circleImageView)
 
-//        binding.containerContent.viewPager.adapter =
-//            ProfileTabPagerAdapter(user.username, childFragmentManager, lifecycle)
+        binding.viewPager.adapter =
+            ProfileTabPagerAdapter(user.username, childFragmentManager, lifecycle)
 
-//        TabLayoutMediator(
-//            binding.containerContent.tabLayout,
-//            binding.containerContent.viewPager
-//        ) { tab, position ->
-//            tab.text = when (position) {
-//                0 -> "Follower"
-//                else -> "Following"
-//            }
-//        }.attach()
+        TabLayoutMediator(
+            binding.tabs,
+            binding.viewPager
+        ) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Follower"
+                else -> "Following"
+            }
+        }.attach()
 
         with(user.username) {
             viewModel.detail(this)
@@ -88,7 +81,7 @@ class DetailUserFragment : Fragment(R.layout.fragment_detail_user) {
 
         viewModel.state.observe(viewLifecycleOwner, stateObserver)
         viewModel.favoriteState.observe(viewLifecycleOwner, favoriteObserver)
-//    }
+
     }
 
     private val stateObserver = Observer<ProfileState> {

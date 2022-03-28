@@ -3,6 +3,9 @@ package com.thor.githubuser3.UI
 import com.thor.githubuser3.UI.DetailUser.DetailUserUseCase
 import com.thor.githubuser3.UI.DetailUser.DetailUserUseCaseImplement
 import com.thor.githubuser3.UI.DetailUser.DetailUserViewModel
+import com.thor.githubuser3.UI.DetailUser.TabFollow.ProfileTabUseCase
+import com.thor.githubuser3.UI.DetailUser.TabFollow.ProfileTabUseCaseImplement
+import com.thor.githubuser3.UI.DetailUser.TabFollow.ProfileTabViewModel
 import com.thor.githubuser3.UI.Favorite.FavoriteUseCase
 import com.thor.githubuser3.UI.Favorite.FavoriteUseCaseImplement
 import com.thor.githubuser3.UI.Favorite.FavoriteViewModel
@@ -19,6 +22,9 @@ val viewModelModule = module {
 
     single<DetailUserUseCase> { DetailUserUseCaseImplement(get()) }
     viewModel { DetailUserViewModel(get()) }
+
+    single<ProfileTabUseCase> { ProfileTabUseCaseImplement(get()) }
+    viewModel { ProfileTabViewModel(get()) }
 
     single<FavoriteUseCase> { FavoriteUseCaseImplement(get()) }
     viewModel { FavoriteViewModel(get()) }
