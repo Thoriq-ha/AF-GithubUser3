@@ -1,6 +1,7 @@
 package com.thor.githubuser3.UI
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -62,19 +63,13 @@ class UserAdapter(private val itemClickListener: (User) -> Unit) :
     class ItemViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bindItem(item: User) {
             binding.tvCompany.text = item.htmlUrl
-//            binding.name.text = item.username
-
+            binding.tvNameUser.text = item.username
 
             Glide.with(binding.root.context)
                 .load(item.avatar)
                 .placeholder(R.mipmap.ic_launcher)
                 .centerCrop()
                 .into(binding.imgItemPhoto)
-
-//            binding.info.setOnClickListener {
-//                CustomTabsIntent.Builder().build()
-//                    .launchUrl(binding.root.context, Uri.parse(item.htmlUrl))
-//            }
         }
     }
 

@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/dark_mode"
+        android:id="@+id/delete"
         android:icon="@drawable/ic_baseline_delete_24"
-        android:title="@string/dark_mode"
+        android:title="@string/delete"
         app:showAsAction="ifRoom" />
 
 </menu>

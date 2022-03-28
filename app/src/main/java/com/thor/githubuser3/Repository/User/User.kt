@@ -12,7 +12,7 @@ data class User(
     val avatar: String = "",
 
     @SerializedName("company")
-    val company: String = "",
+    val company: String? = "",
 
     @SerializedName("login")
     val username: String = "",
@@ -21,21 +21,31 @@ data class User(
     val htmlUrl: String = "",
 
     @SerializedName("location")
-    val alamat: String? = "",
+    val location: String? = "",
 
     @SerializedName("name")
-    val name: String = ""
-) : Parcelable
+    val name: String = "",
+
+    @field:SerializedName("followers")
+    val followers: Int = 0,
+
+    @field:SerializedName("following")
+    val following: Int = 0,
+
+    @field:SerializedName("public_repos")
+    val publicRepos: Int = 0,
+
+    ) : Parcelable
 
 
 fun User.toUserFavorite() = UserFavoriteScema(
     username = this.username,
     avatar = this.avatar,
-    url = htmlUrl
+    htmlUrl = this.htmlUrl,
 )
 
 fun List<UserFavoriteScema>.toListUser(): Flowable<List<User>> {
     return Flowable.just(this.map { item ->
-        User(username = item.username, avatar = item.avatar, htmlUrl = item.url)
+        User(username = item.username, avatar = item.avatar, htmlUrl = item.htmlUrl)
     })
 }

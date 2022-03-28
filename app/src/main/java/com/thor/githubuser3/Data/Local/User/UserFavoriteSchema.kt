@@ -5,10 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "user_favorite")
+@Entity(tableName = UserLocalConfig.TABLE_FAVORITE)
 data class UserFavoriteScema (
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "username") var username: String,
-    @ColumnInfo(name = "url") val url: String,
+    @ColumnInfo(name = "html_url") val htmlUrl: String,
     @ColumnInfo(name = "avatar") val avatar: String,
 )

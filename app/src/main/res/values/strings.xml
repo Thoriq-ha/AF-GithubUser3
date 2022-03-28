@@ -26,5 +26,7 @@
     <string name="dark_mode">Dark Mode</string>
     <string name="network_fail">Network Fail</string>
     <string name="data_is_empty">Data is Empty</string>
+    <string name="favorite_mode">Favorite Mode</string>
+    <string name="delete">delete</string>
 
 </resources>

@@ -11,10 +11,10 @@ class UserRepository(
     /** https://api.github.com/users */
     fun list() = service.users()
 
-    /** https://api.github.com/users/naufalnibros/followers **/
+    /** https://api.github.com/users/thoriq-ha/followers **/
     fun followers(username: String) = service.followers(username)
 
-    /** https://api.github.com/users/naufalnibros/following **/
+    /** https://api.github.com/users/thoriq-ha/following **/
     fun following(username: String) = service.following(username)
 
     /** https://api.github.com/search/users?q=keyword */

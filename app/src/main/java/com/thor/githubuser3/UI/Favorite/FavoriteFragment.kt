@@ -1,11 +1,12 @@
 package com.thor.githubuser3.UI.Favorite
 
 import android.os.Bundle
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.thor.githubuser3.R
+import com.thor.githubuser3.UI.Home.HomeFragmentDirections
 import com.thor.githubuser3.UI.UserAdapter
 import com.thor.githubuser3.Utils.viewBinding
 import com.thor.githubuser3.databinding.FragmentFavoriteBinding
@@ -25,21 +26,17 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
         )
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        setHasOptionsMenu(true)
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        with(binding.toolbar) {
-//            setNavigationOnClickListener {
-//                findNavController().navigateUp()
-//            }
-//
-//            setOnMenuItemClickListener {
-//                when (it.itemId) {
-//                    R.id.action_truncate -> viewModel.deleteAll()
-//                }
-//                false
-//            }
-//        }
 
         binding.rvFavorite.adapter = adapter
 
@@ -57,6 +54,29 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
             }
         }
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.favorite_menu, menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.delete -> {
+                viewModel.deleteAll()
+                true
+            }
+            R.id.menu1 -> {
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
+                )
+                true
+            }
+            else -> true
+        }
+    }
+
 
     override fun onResume() {
         super.onResume()

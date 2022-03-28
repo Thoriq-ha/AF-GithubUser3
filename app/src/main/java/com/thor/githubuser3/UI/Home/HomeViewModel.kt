@@ -9,7 +9,7 @@ import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 
 
-class HomeViewModel(private val useCase: HomeUseCase): BaseViewModel() {
+class HomeViewModel(private val useCase: HomeUseCase) : BaseViewModel() {
 
     private val _stateList = MutableLiveData<HomeState>()
 
