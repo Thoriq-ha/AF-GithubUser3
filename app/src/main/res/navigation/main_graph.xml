@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.thor.githubuser3.UI.Home.HomeFragment"
+        android:name="com.thor.githubuser3.UI.Page.Home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailUserFragment"
-        android:name="com.thor.githubuser3.UI.DetailUser.DetailUserFragment"
+        android:name="com.thor.githubuser3.UI.Page.DetailUser.DetailUserFragment"
         android:label="fragment_detail_user"
         tools:layout="@layout/fragment_detail_user">
         <argument
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.thor.githubuser3.UI.Favorite.FavoriteFragment"
+        android:name="com.thor.githubuser3.UI.Page.Favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" >
         <action

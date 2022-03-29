@@ -6,7 +6,8 @@
     android:layout_marginTop="32dp"
     android:orientation="vertical"
     android:padding="12dp"
-    tools:ignore="UseCompoundDrawables">
+    tools:ignore="UseCompoundDrawables"
+    tools:keep="@layout/item_empty">
 
 
     <TextView

@@ -1,7 +1,7 @@
 package com.thor.githubuser3.Repository.User
 
-import com.thor.githubuser3.Data.Local.User.UserDao
-import com.thor.githubuser3.Data.Remote.Services.UserServices
+import com.thor.githubuser3.Data.API.Services.UserServices
+import com.thor.githubuser3.Data.Local.UserRoom.UserDao
 
 class UserRepository(
     private val dao: UserDao,

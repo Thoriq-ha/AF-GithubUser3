@@ -2,7 +2,7 @@ package com.thor.githubuser3.Repository.User
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import com.thor.githubuser3.Data.Local.User.UserFavoriteScema
+import com.thor.githubuser3.Data.Local.UserRoom.UserFavoriteSchema
 import io.reactivex.Flowable
 import kotlinx.parcelize.Parcelize
 
@@ -38,13 +38,13 @@ data class User(
     ) : Parcelable
 
 
-fun User.toUserFavorite() = UserFavoriteScema(
+fun User.toUserFavorite() = UserFavoriteSchema(
     username = this.username,
     avatar = this.avatar,
     htmlUrl = this.htmlUrl,
 )
 
-fun List<UserFavoriteScema>.toListUser(): Flowable<List<User>> {
+fun List<UserFavoriteSchema>.toListUser(): Flowable<List<User>> {
     return Flowable.just(this.map { item ->
         User(username = item.username, avatar = item.avatar, htmlUrl = item.htmlUrl)
     })

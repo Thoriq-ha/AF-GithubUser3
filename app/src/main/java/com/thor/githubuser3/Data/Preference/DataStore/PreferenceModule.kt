@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 private val Context.dataStoreThemeUI by preferencesDataStore(name = "setting_theme_ui.pref")
 
-val preferencesModul = module {
+val preferencesModule = module {
 
     single {
         DataStoreThemeUI(androidApplication().dataStoreThemeUI)

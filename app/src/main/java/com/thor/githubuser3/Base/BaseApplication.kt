@@ -4,8 +4,8 @@ import android.app.Application
 import com.thor.githubuser3.BuildConfig
 import com.thor.githubuser3.Data.Local.daoModule
 import com.thor.githubuser3.Data.Local.localModule
-import com.thor.githubuser3.Data.Remote.errorHandleModule
-import com.thor.githubuser3.Data.Remote.remoteModule
+import com.thor.githubuser3.Data.API.errorHandleModule
+import com.thor.githubuser3.Data.API.remoteModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

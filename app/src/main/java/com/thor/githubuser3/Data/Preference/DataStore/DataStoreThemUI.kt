@@ -17,16 +17,16 @@ class DataStoreThemeUI(private val dataStore: DataStore<Preferences>) {
         val theme = booleanPreferencesKey("is_dark_mode")
     }
 
-    suspend fun setThemeMode(mode: UIMode) {
+    suspend fun setThemeMode(modeUI: ModeUI) {
         dataStore.edit { preferences ->
-            preferences[Keys.theme] = when (mode) {
-                UIMode.LIGHT -> false
-                UIMode.DARK -> true
+            preferences[Keys.theme] = when (modeUI) {
+                ModeUI.LIGHT -> false
+                ModeUI.DARK -> true
             }
         }
     }
 
-    val uiModeFlow: Flow<UIMode> = dataStore.data
+    val modeUIFlow: Flow<ModeUI> = dataStore.data
         .catch {
             if (it is IOException) {
                 it.printStackTrace()
@@ -37,12 +37,12 @@ class DataStoreThemeUI(private val dataStore: DataStore<Preferences>) {
         }
         .map { preferences ->
             when (preferences[Keys.theme] ?: false) {
-                true -> UIMode.DARK
-                false -> UIMode.LIGHT
+                true -> ModeUI.DARK
+                false -> ModeUI.LIGHT
             }
         }
 }
 
-enum class UIMode {
+enum class ModeUI {
     LIGHT, DARK
 }
