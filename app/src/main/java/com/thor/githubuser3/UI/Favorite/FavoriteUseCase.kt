@@ -7,6 +7,5 @@ import io.reactivex.Flowable
 
 interface FavoriteUseCase {
     fun list(): Flowable<List<User>>
-
     fun truncate(): Completable
 }

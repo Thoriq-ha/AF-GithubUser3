@@ -3,12 +3,13 @@ package com.thor.githubuser3.UI.DetailUser.TabFollow
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.thor.githubuser3.R
 import com.thor.githubuser3.UI.DetailUser.DetailUserFragmentDirections
+import com.thor.githubuser3.UI.Home.HomeState
 import com.thor.githubuser3.UI.UserAdapter
 import com.thor.githubuser3.Utils.viewBinding
 import com.thor.githubuser3.databinding.FragmentFollowerBinding
@@ -34,24 +35,17 @@ class ProfileTabFragment : Fragment(R.layout.fragment_follower) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModel.list(tabkey, username)
-        binding.swiperefresh.setOnRefreshListener { viewModel.list(tabkey, username) }
-
+        viewModel.list(tabkey, username)
         binding.rvFollower.adapter = adapter
-        binding.rvFollower.addItemDecoration(
-            DividerItemDecoration(
-                requireActivity(),
-                DividerItemDecoration.VERTICAL
-            )
-        )
         viewModel.state.observe(viewLifecycleOwner, observerState)
     }
 
     private val observerState = Observer<ProfileTabState> {
-//        binding.swiperefresh.isRefreshing = (it == ProfileTabState.OnLoading)
+        binding.progressCircular.isVisible = (it == ProfileTabState.OnLoading)
         when (it) {
-            ProfileTabState.OnLoading -> {}
+            ProfileTabState.OnLoading -> {
+            }
             is ProfileTabState.OnSuccess -> {
                 adapter.setList(it.list)
             }

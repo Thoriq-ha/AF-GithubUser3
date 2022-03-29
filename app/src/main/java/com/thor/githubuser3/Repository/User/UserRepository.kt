@@ -8,19 +8,19 @@ class UserRepository(
     private val service: UserServices
 ) {
 
-    /** https://api.github.com/users */
+    // https://api.github.com/users
     fun list() = service.users()
 
-    /** https://api.github.com/users/thoriq-ha/followers **/
+    // https://api.github.com/users/thoriq-ha/followers
     fun followers(username: String) = service.followers(username)
 
-    /** https://api.github.com/users/thoriq-ha/following **/
+    // https://api.github.com/users/thoriq-ha/following
     fun following(username: String) = service.following(username)
 
-    /** https://api.github.com/search/users?q=keyword */
+    // https://api.github.com/search/users?q=keyword
     fun search(keyword: String) = service.search(keyword)
 
-    /** https://api.github.com/users/username */
+    // https://api.github.com/users/username
     fun detail(username: String) = service.user(username)
 
     fun favorite(user: User) = dao.save(user.toUserFavorite())

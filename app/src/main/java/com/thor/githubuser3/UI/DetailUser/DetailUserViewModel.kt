@@ -5,7 +5,7 @@ import com.thor.githubuser3.Base.BaseViewModel
 import com.thor.githubuser3.Repository.User.User
 import io.reactivex.schedulers.Schedulers
 
-class DetailUserViewModel(private val useCase: DetailUserUseCase): BaseViewModel() {
+class DetailUserViewModel(private val useCase: DetailUserUseCase) : BaseViewModel() {
 
     private val _state = MutableLiveData<ProfileState>()
 
@@ -14,6 +14,10 @@ class DetailUserViewModel(private val useCase: DetailUserUseCase): BaseViewModel
     val state get() = _state
 
     val favoriteState get() = _favoriteState
+
+    fun refresh(username: String){
+        detail(username)
+    }
 
     fun detail(username: String) {
         useCase.detail(username)

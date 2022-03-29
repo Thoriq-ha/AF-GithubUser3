@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/drawable/background.xml" value="0.2595" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.164" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.164" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/drawable/ic_for_dark_mode.xml" value="0.138" />
@@ -11,8 +12,8 @@
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_detail_user.xml" value="0.2" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_favorite.xml" value="0.2" />
-        <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_follower.xml" value="0.22139303482587064" />
-        <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_home.xml" value="0.16799999999999998" />
+        <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_follower.xml" value="0.2" />
+        <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/item_empty.xml" value="0.2" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/layout/item_user.xml" value="0.25416666666666665" />
         <entry key="..\:/A_KULIAH/BANGKIT 2022/2. Fundamental Android/9. Submission 3 Github User/GithubUser3/app/src/main/res/menu/favorite_menu.xml" value="0.12760416666666666" />

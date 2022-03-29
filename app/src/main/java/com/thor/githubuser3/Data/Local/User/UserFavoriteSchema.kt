@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = UserLocalConfig.TABLE_FAVORITE)
-data class UserFavoriteScema (
+data class UserFavoriteScema(
     @ColumnInfo(name = "id") @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "username") var username: String,
     @ColumnInfo(name = "html_url") val htmlUrl: String,

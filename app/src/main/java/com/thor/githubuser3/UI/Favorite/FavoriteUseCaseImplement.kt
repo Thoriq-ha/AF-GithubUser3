@@ -6,8 +6,8 @@ import com.thor.githubuser3.Repository.User.toListUser
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 
-class FavoriteUseCaseImplement (val repository: UserRepository) : FavoriteUseCase {
-    override fun list(): Flowable<List<User>> = repository .favorites()
+class FavoriteUseCaseImplement(val repository: UserRepository) : FavoriteUseCase {
+    override fun list(): Flowable<List<User>> = repository.favorites()
         .subscribeOn(Schedulers.io())
         .flatMap { database -> database.toListUser() }
 

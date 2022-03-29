@@ -13,7 +13,11 @@ val daoModule = module {
 
 val localModule = module {
     single {
-        Room.databaseBuilder(androidApplication(), UserDatabase::class.java, UserLocalConfig.DATABASE_NAME)
+        Room.databaseBuilder(
+            androidApplication(),
+            UserDatabase::class.java,
+            UserLocalConfig.DATABASE_NAME
+        )
             .fallbackToDestructiveMigration()
             .build()
     }

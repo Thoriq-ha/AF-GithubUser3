@@ -6,14 +6,13 @@ import com.thor.githubuser3.Repository.User.User
 import io.reactivex.schedulers.Schedulers
 
 
-class ProfileTabViewModel(private val useCase: ProfileTabUseCase): BaseViewModel() {
+class ProfileTabViewModel(private val useCase: ProfileTabUseCase) : BaseViewModel() {
 
     private val _state = MutableLiveData<ProfileTabState>()
-
     val state get() = _state
 
     fun list(type: Int, username: String) {
-        when(type) {
+        when (type) {
             0 -> useCase.follower(username)
             else -> useCase.following(username)
         }.subscribeOn(Schedulers.io())
@@ -25,7 +24,6 @@ class ProfileTabViewModel(private val useCase: ProfileTabUseCase): BaseViewModel
                 _state.postValue(ProfileTabState.OnError(it?.message ?: "Terjadi Kesalahan"))
             }).disposeOnCleared()
     }
-
 }
 
 sealed class ProfileTabState {

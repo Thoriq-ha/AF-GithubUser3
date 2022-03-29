@@ -32,6 +32,9 @@
                 android:name="user"
                 app:argType="com.thor.githubuser3.Repository.User.User" />
         </action>
+        <action
+            android:id="@+id/action_detailUserFragment_to_homeFragment3"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"

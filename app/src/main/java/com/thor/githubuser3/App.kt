@@ -8,7 +8,7 @@ import com.thor.githubuser3.Repository.User.repositoryModule
 import com.thor.githubuser3.UI.viewModelModule
 import org.koin.core.module.Module
 
-class App: BaseApplication() {
+class App : BaseApplication() {
     override fun defineDependencies(): List<Module> {
         return listOf(
             daoModule,

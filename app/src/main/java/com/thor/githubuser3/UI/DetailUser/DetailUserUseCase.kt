@@ -7,13 +7,8 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 
 interface DetailUserUseCase {
-
     fun detail(username: String): Observable<User>
-
     fun favorite(user: User): Completable
-
     fun find(username: String): Flowable<UserFavoriteScema>
-
     fun delete(username: String): Completable
-
 }
