@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">GithubUser3</string>
     <string name="hello_blank_fragment" tools:keep="@string/hello_blank_fragment">Hello blank fragment</string>
-    <string name="search">search user</string>
+    <string name="search" tools:keep="@string/search">search user</string>
     <string name="menu">Exit</string>
     <string name="hint">Masukkan nama pengguna</string>
-    <string name="tab_text1">Follower</string>
-    <string name="tab_text2">Following</string>
+    <string name="tab_text1" tools:keep="@string/tab_text1">Follower</string>
+    <string name="tab_text2" tools:keep="@string/tab_text2">Following</string>
     <string name="ahmad_dahlan" tools:keep="@string/ahmad_dahlan">ahmad_dahlan</string>
     <string name="pegawai_negeri" tools:keep="@string/pegawai_negeri">pegawai_negeri</string>
     <string name="github_user" tools:keep="@string/github_user">Github User</string>
@@ -21,7 +21,7 @@
     <string name="following" tools:keep="@string/following">Following</string>
     <string name="repository" tools:keep="@string/repository">repository</string>
     <string name="share" tools:keep="@string/share">Share</string>
-    <string name="user_not_found">User Not Found</string>
+    <string name="user_not_found" tools:keep="@string/user_not_found">User Not Found</string>
     <string name="your_favourite">Your Favourite</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="network_fail">Network Fail</string>

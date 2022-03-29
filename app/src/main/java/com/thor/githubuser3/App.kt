@@ -1,3 +1,4 @@
+@file:Suppress("unused")
 package com.thor.githubuser3
 
 import com.thor.githubuser3.Base.BaseApplication
