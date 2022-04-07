@@ -43,7 +43,7 @@ class FollowTabFragment : Fragment(R.layout.fragment_follower) {
     }
 
     private val observerState = Observer<ProfileTabState> {
-        binding.progressCircular.isVisible = (it == ProfileTabState.OnLoading)
+        binding.progressBar.isVisible = (it == ProfileTabState.OnLoading)
         when (it) {
             ProfileTabState.OnLoading -> {
             }

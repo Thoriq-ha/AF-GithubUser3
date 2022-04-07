@@ -129,6 +129,7 @@ class DetailUserFragment : Fragment(R.layout.fragment_detail_user) {
                 binding.tvFollowers.text = it.user.followers.toString()
                 binding.tvFollowing.text = it.user.following.toString()
                 binding.tvRepository.text = it.user.publicRepos.toString()
+                binding.tvUsername.text = it.user.username
                 binding.tvName.text = name
                 binding.tvLocation.text =location
                 binding.tvCompanyDetail.text =company
